@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Belkacem</title>
+    <link rel="stylesheet" href="/home/belka/Documents/Project/site/lib/style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  </head>
+  <body ng-controller="switchPanel as panel">
+    <nav>
+      <ul>
+        <li ng-click="panel.setActive(1)" >Présentation</li>
+        <li ng-click="panel.setActive(2)" >Jeu</li>
+        <li ng-click="panel.setActive(3)" >CV</li>
+      </ul>
+    </nav>
+    <img id="previous" ng-click="panel.previous()" src="lib/assets/previous.png" />
+    <img id="next" ng-click="panel.next()" src="lib/assets/next.png" />
+    <div id="content">
+      <my-panel id="presentation" ng-if="panel.check(1)" title="presentation" presentation></my-panel>
+      <my-panel id="game" ng-if="panel.check(2)" title="jeu" game></my-panel>
+      <my-panel id="cv" ng-if="panel.check(3)" title="cv" cv></my-panel>
+    </div>
+    <script src="lib/node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="lib/script/directives.js" charset="utf-8"></script>
+    <script src="lib/script/main.js" charset="utf-8"></script>
+  </body>
+</html>
